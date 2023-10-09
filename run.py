@@ -3,14 +3,14 @@ Tic tac toe Game the list game zone hepl us to know
 what position the player choose 
 """
 from random import randint
-
+RUNINGAME = True
 game_zone = [" · "," · "," · ",
              " · "," · "," · ",
              " · "," · "," · ",]
 """
 controls in the game if runing
 """
-runinGame = True
+
 
 def print_game_zone(patron):
     """
@@ -48,7 +48,7 @@ def player_choose(patron):
             position = int(input("\n please select your number (1-9)"))
             while not(position >= 1 and position <= 9 and patron[position - 1] == " · "):
                 print ("must put a number between 1 and 9")
-                position = int(input("\n please select your number (1-9)"))
+                position = int(input("\nplease select your number (1-9)"))
 
             patron[position-1] = " X "
             correct = False
@@ -71,7 +71,7 @@ def pc_choose(patron):
     patron[po_position] = " O "
 
 #check for win or tie
-def chek_board(patron,player, game_satus):
+def chek_board(patron,player):
     """
     Check if the player or the machine has won
     """
@@ -79,41 +79,40 @@ def chek_board(patron,player, game_satus):
     if player == " X ":#check player "x"
         if (patron[0] ==" X " and patron[1] ==" X " and patron[2] ==" X ") or (patron[3] ==" X " and patron[4] ==" X " and patron[5] ==" X ") or ( patron[6] ==" X " and patron[7] ==" X " and patron[8] ==" X "):
             print ("You win")
-            game_satus = False
-            return game_satus
+            return False
         elif (patron[0] ==" X " and patron[3] ==" X " and patron[6] ==" X ") or (patron[1] ==" X " and patron[4] ==" X " and patron[7] ==" X ") or ( patron[2] ==" X " and patron[5] ==" X " and patron[8] ==" X "):
             print ("You win")
-            game_satus = False
-            return game_satus
+            return False
         elif (patron[0] ==" X " and patron[4] ==" X " and patron[8] ==" X ") or (patron[2] ==" X " and patron[4] ==" X " and patron[6] ==" X "):
             print ("You win")
-            game_satus = False
-            return game_satus
-        else:
-            return True
-    
+            return False
     elif player == " O ": #check player "o"
         if (patron[0] ==" O " and patron[1] ==" O " and patron[2] ==" O ") or (patron[3] ==" O " and patron[4] ==" O " and patron[5] ==" O ") or ( patron[6] ==" O " and patron[7] ==" O " and patron[8] ==" O "):
             print ("You Loseeee....")
-            game_satus = False
-            return game_satus
+            return False
         elif (patron[0] ==" O " and patron[3] ==" O " and patron[6] ==" O ") or (patron[1] ==" O " and patron[4] ==" O " and patron[7] ==" O ") or ( patron[2] ==" O " and patron[5] ==" O " and patron[8] ==" O "):
             print ("You Loseeee....")
-            game_satus = False
-            return game_satus
+            return False
         elif (patron[0] ==" O " and patron[4] ==" O " and patron[8] ==" O ") or (patron[2] ==" O " and patron[4] ==" O " and patron[6] ==" O "):
             print ("You loseeee.....")
-            game_satus = False
-            return game_satus
+            return False
     
+    return True
 # switch the player
 
 # check for win or tie agaion
-user = start_game()
-while runinGame:
+start_game()
+while RUNINGAME:
     print_game_zone(game_zone)
     player_choose(game_zone)
-    chek_board(game_zone," X ", runinGame)
+    if not chek_board(game_zone," X "):
+        print_game_zone(game_zone)
+        break
+    else:
+        pass
     pc_choose(game_zone)
-    chek_board(game_zone," O ", runinGame)
+    if not chek_board(game_zone," O "):
+        break
+    else:
+        pass
         
