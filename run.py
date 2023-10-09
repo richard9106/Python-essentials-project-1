@@ -2,11 +2,15 @@
 Tic tac toe Game the list game zone hepl us to know 
 what position the player choose 
 """
+from random import randint
+
 game_zone = [" · "," · "," · ",
              " · "," · "," · ",
              " · "," · "," · ",]
-
-runin_game = True
+"""
+controls in the game if runing
+"""
+runinGame = True
 
 def print_game_zone(patron):
     """
@@ -17,7 +21,6 @@ def print_game_zone(patron):
     print (patron[3] + "|" + patron[4] + "|" + patron[5] )
     print ("___________")
     print (patron[6] + "|" + patron[7] + "|" + patron[8] )
-    
 # start the game with message asking name player
 def start_game():
     """
@@ -38,23 +41,46 @@ def player_choose(patron):
     """
     We put the player choose in a var and compare
     if a right number o it's not already used
-    """       
-    position = int(input("please select your number (1-9)"))
-    print (position)
-
-    if position >= 1 and position <= 9 and patron[position - 1] == " · ":
-        patron[position-1] = "X"
-    else:
-        print ("The Number in not correct or that position is used")
+    """
+    position = int(input("\n please select your number (1-9)"))
+    while not(position >= 1 and position <= 9 and patron[position - 1] == " · "):
+        print ("The number is not correct or the position it's used")
+        position = int(input("\n please select your number (1-9)"))
+    patron[position-1] = " X "
 
 
+def pc_choose(patron):
+    """
+    Generate a random number between 0 and 8
+    and add tho the board
+    """
+    po_position = randint(0,8)
+    while patron[po_position] ==" X " or patron[po_position] == " O ":
+        po_position = randint(0,8)
+
+    print (po_position)
+    patron[po_position] = " O "
 
 #check for win or tie
+def chek_board(patron,player):
+    """
+    Check if the player or the machine has won
+    """
+    if player == " X ":
+        
+
+
+    elif player == " O ":
+
+    return False    
 
 # switch the player
 
 # check for win or tie agaion
 user = start_game()
-while runin_game:
+while runinGame:
     print_game_zone(game_zone)
     player_choose(game_zone)
+    chek_board(game_zone," X ")
+    pc_choose(game_zone)
+    chek_board(game_zone," O ")
