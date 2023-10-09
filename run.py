@@ -29,7 +29,7 @@ def start_game():
     print ("Welcome to tic tac toe\n ")
     print ("In turns, each one places their pieces.")
     print ("The first person to make a row with their three pieces wins\n ")
-    player_name = input("Please Enter your Name ")
+    player_name = input("Please Enter your Name\n ")
 
     print ("Hi "+ player_name + " Please choose a number from 1 to 9")
     print ("the board starts from the upper left corner\n ")
@@ -42,12 +42,22 @@ def player_choose(patron):
     We put the player choose in a var and compare
     if a right number o it's not already used
     """
-    position = int(input("\n please select your number (1-9)"))
-    while not(position >= 1 and position <= 9 and patron[position - 1] == " · "):
-        print ("The number is not correct or the position it's used")
-        position = int(input("\n please select your number (1-9)"))
-    patron[position-1] = " X "
+    correct = True
+    while correct:
+        try:
+            position = int(input("\n please select your number (1-9)"))
+            while not(position >= 1 and position <= 9 and patron[position - 1] == " · "):
+                print ("must put a number between 1 and 9")
+                position = int(input("\n please select your number (1-9)"))
 
+            patron[position-1] = " X "
+            correct = False
+        except ValueError :
+            print ("This is a string you must put a number between 1 and 9")
+
+   
+
+    
 
 def pc_choose(patron):
     """
@@ -58,22 +68,44 @@ def pc_choose(patron):
     while patron[po_position] ==" X " or patron[po_position] == " O ":
         po_position = randint(0,8)
 
-    print (po_position)
     patron[po_position] = " O "
 
 #check for win or tie
-def chek_board(patron,player):
+def chek_board(patron,player, game_satus):
     """
     Check if the player or the machine has won
     """
-    if player == " X ":
-        
 
-
-    elif player == " O ":
-
-    return False    
-
+    if player == " X ":#check player "x"
+        if (patron[0] ==" X " and patron[1] ==" X " and patron[2] ==" X ") or (patron[3] ==" X " and patron[4] ==" X " and patron[5] ==" X ") or ( patron[6] ==" X " and patron[7] ==" X " and patron[8] ==" X "):
+            print ("You win")
+            game_satus = False
+            return game_satus
+        elif (patron[0] ==" X " and patron[3] ==" X " and patron[6] ==" X ") or (patron[1] ==" X " and patron[4] ==" X " and patron[7] ==" X ") or ( patron[2] ==" X " and patron[5] ==" X " and patron[8] ==" X "):
+            print ("You win")
+            game_satus = False
+            return game_satus
+        elif (patron[0] ==" X " and patron[4] ==" X " and patron[8] ==" X ") or (patron[2] ==" X " and patron[4] ==" X " and patron[6] ==" X "):
+            print ("You win")
+            game_satus = False
+            return game_satus
+        else:
+            return True
+    
+    elif player == " O ": #check player "o"
+        if (patron[0] ==" O " and patron[1] ==" O " and patron[2] ==" O ") or (patron[3] ==" O " and patron[4] ==" O " and patron[5] ==" O ") or ( patron[6] ==" O " and patron[7] ==" O " and patron[8] ==" O "):
+            print ("You Loseeee....")
+            game_satus = False
+            return game_satus
+        elif (patron[0] ==" O " and patron[3] ==" O " and patron[6] ==" O ") or (patron[1] ==" O " and patron[4] ==" O " and patron[7] ==" O ") or ( patron[2] ==" O " and patron[5] ==" O " and patron[8] ==" O "):
+            print ("You Loseeee....")
+            game_satus = False
+            return game_satus
+        elif (patron[0] ==" O " and patron[4] ==" O " and patron[8] ==" O ") or (patron[2] ==" O " and patron[4] ==" O " and patron[6] ==" O "):
+            print ("You loseeee.....")
+            game_satus = False
+            return game_satus
+    
 # switch the player
 
 # check for win or tie agaion
@@ -81,6 +113,7 @@ user = start_game()
 while runinGame:
     print_game_zone(game_zone)
     player_choose(game_zone)
-    chek_board(game_zone," X ")
+    chek_board(game_zone," X ", runinGame)
     pc_choose(game_zone)
-    chek_board(game_zone," O ")
+    chek_board(game_zone," O ", runinGame)
+        
