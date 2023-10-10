@@ -58,13 +58,24 @@ I decided to use a list as my model it's a global element so I can use to check 
 
 The game has  a while loop so the steps are repetitive, within the loop there are flow control elements so the program can decided what to do in the different possibilities.
 
-
+## Testing
 
 - Your code must be placed in the `run.py` file
 - Your dependencies must be placed in the `requirements.txt` file
 - Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## Bugs
+
+### Solve Bugs
+*
+*
+
+### Remaining Busgs
+
+* No bugs remaining
+
+
+## Deployment
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
@@ -77,10 +88,10 @@ If you have credentials, such as in the Love Sandwiches project, you must create
 
 Connect your GitHub repository and deploy as normal.
 
-## Constraints
+## Credits
 
 The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
 ---
 
-Happy coding!
+
