@@ -1,10 +1,64 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tic Tac Toe vs PC
 
-Welcome,
+Welcome to the most competitive game, now you can test your skill against the computer, who will be the winner
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+The player can try to beat the machine by being the first to complete a line of three pieces in the square, the player who starts first has a better chance of winning so let's ***see how lucky you are.***
 
-## Reminders
+![Game Area Image](./assets/images/pc2.jpg)
+
+
+## How to Play
+
+Tic-tac-toe is a classic two-player game where the goal is to get three of your symbols (either X or O) in a row, either horizontally, vertically, or diagonally, on a 3x3 grid.
+
+### Rules:
+- The PC randomly chooses who plays first.
+- If the player start firs will be "X", if the pc start will be "O"
+- The first one to complete a line of three symbols wins
+- If there a Tie or you win,  you have the opcion to start again 
+
+## Features
+
+### Existing Features
+
+* Start the game, Board generation and choice of who starts
+
+    *   Show the rules
+    *   Ask for a user name
+    *   will show whos going to start, if it is the player ask for position if it is the pc show the board with the selection made
+
+![Start Game Image](./assets/images/pc2.jpg)
+* Update Board 
+
+    * Everytime you select a position or the pc, the update board will be displayed.
+
+![First Movements](./assets/images/pc2.jpg)
+
+* Win or tie
+
+    * When a player or pc Wins the game de las Update board will be display and if it is the player the result will be "You win" but if it is the PC the resulr will be "You lose"
+
+    * When there is not winner it's just a "Tie" message with an option to play again 
+
+![Win and Tie Image](./assets/images/pc2.jpg)
+
+----
+
+## Future Features
+
+* Select difficulty
+
+* Timer or Count Down
+
+
+
+## Data Model
+
+I decided to use a list as my model it's a global element so I can use to check anything. I print the area game iterating on each of the elements and put some complements to make looks better and after that display into the terminal.
+
+The game has  a while loop so the steps are repetitive, within the loop there are flow control elements so the program can decided what to do in the different possibilities.
+
+
 
 - Your code must be placed in the `run.py` file
 - Your dependencies must be placed in the `requirements.txt` file
