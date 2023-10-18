@@ -88,37 +88,26 @@ def chek_board(patron, player):
     # print (rows)
     # print (columns)
     # print (diag)
-    winner = True
+    winner = False
     for i in range(3):
-        winner = True
-        for j in range(3):
-            if rows[i][j] != player:
-                winner = False
-                break
-        if winner:
-            print(f"The User with \"{player}\" element Wins")
-            return False
+        current_row = rows[i]
+        if all(j == player for j in current_row):
+            print(f"The {player} has won")
+            winner=True
+            break
     for i in range(3):
-        winner = True
-        for j in range(3):
-            if columns[i][j] != player:
-                winner = False
-                break
-        if winner:
-            print(f"The User with \"{player}\" element Wins")
-            return False
-    
+        current_column = columns[i]
+        if all(j == player for j in current_column):
+            print(f"The {player} has won")
+            winner=True
+            break
     for i in range(2):
-        winner = True
-        for j in range(2):
-            if diag[i][j] != player:
-                winner = False
-                break
-        if winner:
-            print(f"The User with \"{player}\" element Wins")
-            return False
-       
-    return True
+        current_diag = diag[i]
+        if all(j == player for j in current_diag):
+            print(f"The {player} has won")
+            winner=True
+            break
+    return winner
 # Check for Tie
 
 
@@ -129,27 +118,30 @@ def check_tie(board):
     """
     if " · " not in board:
         print("THIS IS A TIE......")
-        return False
+        return True
 
-    return True
+    return False
 # check for win or tie agaion
 
 
 start_game()
-
+print_game_zone(game_zone)  # print the game area
 
 while RUNINGAME:
-    print_game_zone(game_zone)  # print the game area
     player_choose(game_zone)  # ask the player for a number
-    if not chek_board(game_zone, " X "):  # check if we win
+    if chek_board(game_zone, " X "):  # check if we win
         print_game_zone(game_zone)
         break
-    if not check_tie(game_zone):  # check if tie
-        break
+    else:
+        print_game_zone(game_zone)
+    if check_tie(game_zone):  # check if tie
+       break
     pc_choose(game_zone)
-    if not chek_board(game_zone, " O "):  # check if the pc wins
+    if chek_board(game_zone, " O "):  # check if the pc wins
         print_game_zone(game_zone)
         break
-    if not check_tie(game_zone):  # check if tie
+    else:
+        print_game_zone(game_zone)    
+    if check_tie(game_zone):  # check if tie
         break
     
