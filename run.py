@@ -132,16 +132,14 @@ while RUNINGAME:
     if chek_board(game_zone, " X "):  # check if we win
         print_game_zone(game_zone)
         break
-    else:
-        print_game_zone(game_zone)
+    print_game_zone(game_zone)
     if check_tie(game_zone):  # check if tie
-       break
+        break
     pc_choose(game_zone)
     if chek_board(game_zone, " O "):  # check if the pc wins
         print_game_zone(game_zone)
         break
-    else:
-        print_game_zone(game_zone)    
+    print_game_zone(game_zone)    
     if check_tie(game_zone):  # check if tie
         break
     

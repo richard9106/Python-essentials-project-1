@@ -3,9 +3,8 @@
 Welcome to the most competitive game, now you can test your skill against the computer, who will be the winner
 
 The player can try to beat the machine by being the first to complete a line of three pieces in the square, the player who starts first has a better chance of winning so let's ***see how lucky you are.***
-
-![Game Area Image](./assets/images/pc2.jpg)
-
+_____
+![Game Area Image](./img/game_start.jpg)
 
 ## How to Play
 
@@ -27,7 +26,8 @@ Tic-tac-toe is a classic two-player game where the goal is to get three of your 
     *   Ask for a user name
     *   will show whos going to start, if it is the player ask for position if it is the pc show the board with the selection made
 
-![Start Game Image](./assets/images/pc2.jpg)
+![Start Game Image](./img/start1.jpg)
+
 * Update Board 
 
     * Everytime you select a position or the pc, the update board will be displayed.
