@@ -1,6 +1,6 @@
 # Tic Tac Toe vs PC
 
-Welcome to the most competitive game, now you can test your skill against the computer, who will be the winner
+Welcome to the most competitive game, now you can test your skill against the computer, who will be the winner??
 
 The player can try to beat the machine by being the first to complete a line of three pieces in the square, the player who starts first has a better chance of winning so let's ***see how lucky you are.***
 _____
@@ -32,23 +32,22 @@ Tic-tac-toe is a classic two-player game where the goal is to get three of your 
 
     * Everytime you select a position or the pc, the update board will be displayed.
 
-![First Movements](./assets/images/pc2.jpg)
+![First Movements](./img/playing1.jpg)
 
 * Win or tie
 
     * When a player or pc Wins the game de las Update board will be display and if it is the player the result will be "You win" but if it is the PC the resulr will be "You lose"
 
     * When there is not winner it's just a "Tie" message with an option to play again 
-
-![Win and Tie Image](./assets/images/pc2.jpg)
+## win
+![Win and Tie Image](./img/you-win.jpg)
 
 ----
-
+## tie
+![Win and Tie Image](./img/you-win.jpg)
 ## Future Features
 
 * Select difficulty
-
-* Timer or Count Down
 
 
 
@@ -65,9 +64,11 @@ The game has  a while loop so the steps are repetitive, within the loop there ar
 - Do not edit any of the other files or your code may not deploy properly
 
 ## Bugs
+* The pc always loses, so i have to modify the code to make the game harder.
+
 
 ### Solve Bugs
-*
+* 
 *
 
 ### Remaining Busgs
