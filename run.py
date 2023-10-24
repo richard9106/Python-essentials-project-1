@@ -34,11 +34,14 @@ def start_game():
     print("in any direction wins\n ")
     player_name = input("Please Enter your Name\n ")
     print("----------------------------------")
-    print("Hi " + player_name + " Now we will decide who it's going to start\n")
+    print("Hi " + player_name)
+    print(" Now we will decide who it's going to start\n")
     print("Keep in mind that the board starts in the top left corner\n ")
     return player_name
 
 # take player input
+
+
 def player_choose(patron):
     """
     We put the player choose in a var and compare
@@ -48,8 +51,8 @@ def player_choose(patron):
     while correct:
         try:
             position = int(input("\nplease select your number (1-9)"))
-            while not (position >= 1 and position <= 9 and patron[position - 1] == " · "):
-                print("The position it's used or the number it's not between 1 and 9")
+            while not (1 <= position <= 9 and patron[position - 1] == " · "):
+                print("The position it's used or the number it's not 1 to 9")
                 position = int(input("\nselect your number (1-9)\n "))
             patron[position-1] = " X "
             correct = False
@@ -58,6 +61,8 @@ def player_choose(patron):
 
 
 # The computer select a random position
+
+
 def pc_choose(patron):
     """
     Generate a random number between 0 and 8
@@ -71,7 +76,9 @@ def pc_choose(patron):
     print(f"\nThe Pc has select position {po_position + 1}")
 
 
-#select a random number between 1 and 2
+# select a random number between 1 and 2
+
+
 def random_number():
     """
     generate a random number between 1 and 2
@@ -89,7 +96,8 @@ def chek_board(patron, player):
     rows = [[patron[0], patron[1], patron[2]],
             [patron[3], patron[4], patron[5]],
             [patron[6], patron[7], patron[8]]]
-    columns = [[patron[0], patron[3], patron[6]],
+    columns = [
+            [patron[0], patron[3], patron[6]],
             [patron[1], patron[4], patron[7]],
             [patron[2], patron[5], patron[8]]]
     diag = [[patron[0], patron[4], patron[8]],
@@ -99,29 +107,31 @@ def chek_board(patron, player):
         current_row = rows[i]
         if all(j == player for j in current_row):
             print(f"The player with the {player} has won")
-            winner=True
+            winner = True
             break
     for i in range(3):
         current_column = columns[i]
         if all(j == player for j in current_column):
             print(f"The player with the {player} has won")
-            winner=True
+            winner = True
             break
     for i in range(2):
         current_diag = diag[i]
         if all(j == player for j in current_diag):
             print(f"The player with the {player} has won")
-            winner=True
+            winner = True
             break
     return winner
 
 
-#the user start first
+# the user start first
+
+
 def user_start_firts(who):
     """
     The user it's the first to play
     """
-    print (f"Congrats {who} you start first\n")
+    print(f"Congrats {who} you start first\n")
     print_game_zone(game_zone)
     while RUNINGAME:
         player_choose(game_zone)  # ask the player for a number
@@ -139,12 +149,14 @@ def user_start_firts(who):
         if check_tie(game_zone):  # check if tie
             break
 
-#the user start first
+# the user start first
+
+
 def pc_start_firts(who):
     """
     The user it's the first to play
     """
-    print (f"Ups.. {who} the PC start first\n")
+    print(f"Ups.. {who} the PC start first\n")
     while RUNINGAME:
         pc_choose(game_zone)
         if chek_board(game_zone, " O "):  # check if the pc wins
@@ -181,4 +193,3 @@ if who_starts == 1:
     user_start_firts(user)
 else:
     pc_start_firts(user)
-    
