@@ -117,11 +117,11 @@ def chek_board(patron, player):
 
 
 #the user start first
-def user_start_firts(user):
+def user_start_firts(who):
     """
     The user it's the first to play
     """
-    print (f"Congrats {user} you start first\n")
+    print (f"Congrats {who} you start first\n")
     print_game_zone(game_zone)
     while RUNINGAME:
         player_choose(game_zone)  # ask the player for a number
@@ -140,11 +140,11 @@ def user_start_firts(user):
             break
 
 #the user start first
-def pc_start_firts():
+def pc_start_firts(who):
     """
     The user it's the first to play
     """
-    print (f"Ups.. {user} the PC start first\n")
+    print (f"Ups.. {who} the PC start first\n")
     while RUNINGAME:
         pc_choose(game_zone)
         if chek_board(game_zone, " O "):  # check if the pc wins
@@ -180,5 +180,5 @@ who_starts = random_number()
 if who_starts == 1:
     user_start_firts(user)
 else:
-    pc_start_firts()
+    pc_start_firts(user)
     
