@@ -1,4 +1,4 @@
-# Tic Tac Toe vs PC
+# Tic-Tac-Toe Machine VS Human
 
 Welcome to the most competitive game, now you can test your skill against the computer, who will be the winner??
 
@@ -59,39 +59,47 @@ The game has  a while loop so the steps are repetitive, within the loop there ar
 
 ## Testing
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+I have manually tested this project by doing the following:
+
+- Passed the code trough a [CI Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no problems
+
+![PEP8](./img/no_errors.jpg)
+
+- Given invalids inputs: strings or numbers out of range or try to used a taken position
+- Tested in my local terminal and the Code Institute Heroku terminal
 
 ## Bugs
-* The pc always loses, so i have to modify the code to make the game harder.
+
+* The pc always loses, so It's a random choise it's very easy to win.
 
 
 ### Solve Bugs
-* 
-*
+* Using [CI python Linter](https://pep8ci.herokuapp.com/) Fixin wrong identation
+
 
 ### Remaining Busgs
 
 * No bugs remaining
 
-
+## Validator Testing
+* PEP8
+    - All clear, no errors found
 ## Deployment
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+This project was deployed using Code Institute's mock terminal for Heroku
 
-1. `heroku/python`
-2. `heroku/nodejs`
+* Steps for deplyment:
+    - Fork or clone this repository [Tic-Tac-Toe Machine VS Human](https://github.com/richard9106/Python-essentials-project-1)
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
+    - Create a new Heroku app
+    - Set the buildbacks to Python and NodeJs in that order
+    - link the Heroku app to the repository
+    - click on deploy
 
 ## Credits
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* Code Institute for the deployment terminal
+* Tic Tac Toe inspiration [Medium](https://medium.com/@bblkmn5/tic-tac-toe-command-line-game-python-82e07b7acdfd)
 
 ---
 
