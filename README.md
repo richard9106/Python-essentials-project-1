@@ -3,6 +3,8 @@
 Welcome to the most competitive game, now you can test your skill against the computer, who will be the winner??
 
 The player can try to beat the machine by being the first to complete a line of three pieces in the square, the player who starts first has a better chance of winning so let's ***see how lucky you are.***
+
+![APP](./img/app.png)
 _____
 ![Game Area Image](./img/game_start.jpg)
 
@@ -96,6 +98,7 @@ This project was deployed using Code Institute's mock terminal for Heroku
     - link the Heroku app to the repository
     - click on deploy
 
+Link to the app [HERE](https://tictactoemachinevshuman-fa84cbc43bfc.herokuapp.com/)
 ## Credits
 
 * Code Institute for the deployment terminal
